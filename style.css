@@ -112,7 +112,7 @@ main {
 
 .chatbox {
  width: 90%;
- height: 78vh;
+ height: 76vh;
  display: flex;
  flex-direction:  column;
  padding: 4% 6% 0% 4%;
