@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initail-scale=1">
+  <meta name="author" content="Adebayo Muis ( Charmingdc )">
+  <meta name="description" content="Generative Ai chatbot">
+  <meta name="theme-color" content="rgb(24, 29, 34)">
+  <link rel="apple-touch-icon" sizes="180x180" href="./images/axionis.jpg">
+  <link rel="icon" type="image/jpg" sizes="32x32" href="./images/axionis.jpg">
+  <link rel="icon" type="image/jpg" sizes="16x16" href="./images/axionis.jpg">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="rgb(24, 29, 34)">
+  <meta name="msapplication-TileColor" content="rgb(13, 13, 13)">
+  <meta name="msapplication-TileImage" content="./images/axionis.jpg">
+
+  <title>
+   Axionis - Your generative Ai 
+  </title>
+  
+    <!-- cdn links for poppins font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  
+    <!-- cdn link for fontawesome icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+       <!-- link to manifest.json file -->
+  <link rel="manifest" href="./manifest.json">
+  
+     <!-- link to css style sheet -->
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://esm.run/@google/generative-ai"></script>
+</head>
+<body>
+  <main>
+   
+    <div class="container">
+      <ul class="topbar">
+        <li>
+          <img src="./images/axionis.jpg" alt="Axionis" id="axionis-dp">
+          <h3 id="axionis-name">
+            Axionis
+          </h3>
+        </li>
+        <li>
+          <i class="fa-solid fa-ellipsis-vertical" id="three-dot"></i>
+        </li>
+      </ul>
+      
+      
+      
+       <ul class="action-tab">
+         <li id="view-dev">
+           <i class="fa-solid fa-circle-user"></i> Developer
+         </li>
+         <li id="view-detailbutton">
+           <i class="fa-solid fa-info-circle"></i> View details
+         </li>
+         <li id="start-newchat">
+           <i class="fa-solid fa-edit"></i> New chat
+         </li>
+       </ul>
+           
+      
+      <div class="chatbox">
+        
+        <div class="default-screen">
+           <img src="./images/axionis.jpg" alt="Axionis Chatbot">
+           <h3>
+             Axionis
+           </h3>
+           <p>
+             Hi, I'm Axionis. Your generative AI.
+           </p>
+        </div>
+        
+      </div>
+     
+      
+     <div class="chat-sender">
+       <input required="" placeholder="Type your message..." type="text" id="chat-input" />
+       <button id="send-button">
+         <i class="fa-solid fa-paper-plane" id="send-icon"></i>
+       </button>
+     </div>
+     
+     
+     
+     
+     <div id="about-ai">
+       <ul>
+         <li>
+          <!-- made empty on purpose -->
+         </li>
+         <li id="hide-aboutai">
+           <i class="fa-solid fa-circle-xmark"></i>
+         </li>
+       </ul>
+       
+       <img src="./images/axionis.jpg" alt="Axionis">
+       <h2>
+         Axionis
+       </h2>
+       
+       <p>
+        Generative ai chatbot.
+       </p>
+       
+       <p>
+         Model info: <br><br>
+         • gemini-1.5-flash <br>
+         • generative model
+       </p>
+     </div>
+     
+     
+     <div id="about-dev">
+       <ul>
+         <li>
+          
+         </li>
+         <li id="hide-aboutdev">
+           <i class="fa-solid fa-circle-xmark"></i>
+         </li>
+       </ul>
+       
+       <img src="./images/charmingdc.jpg" alt="Charmingdc">
+       
+       <h2>
+         Charmingdc
+       </h2><br>
+       
+       <p>
+        I'm <strong>Adebayo Muis</strong> but also known as <strong>Charmingdc</strong>. I'm a creative web developer with lot of passion for tech.
+       </p>
+       
+       <p>
+         I design beautiful and responsive web interface while also paying close attention to user experience thus making vistors addicted to the websites I build. 
+       </p>
+       
+       <p>
+         I'm availabe for any job opportunity as a frontend developer as well as internships and freelance projects. <br><br>
+         Github profile: <a href="https://github.com/Charmingdc" target="_blank"> https://github.com/Charmingdc </a> <br>
+         My personal website: <a href="https://taplink.cc/charmingdc" target="_blank"> https://taplink.cc/charmingdc </a>
+       </p>
+     </div>
+     
+     <div class="to-bottom-btn">
+       <i class="fa-solid fa-angle-down"></i>
+     </div>
+     
+    </div>
+    
+  </main>
+  
+ 
+  <script src="./script.js" type="module"></script>
+  <script src="./sw.js"></script>
+</body>
+</html> 

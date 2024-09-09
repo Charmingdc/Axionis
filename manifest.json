@@ -1,0 +1,21 @@
+{
+ "name": "Axionis - Generative AI",
+ "short_name": "Axionis",
+ "description": "Generative ai chatbot",
+ "start_url": "./index.html",
+ "background_color": "rgb(13, 13, 13)",
+ "theme_color": "rgb(13, 13, 13)",
+ "display": "standalone",
+ "icons": [
+  {
+    "src": "./images/axionis.jpg",
+    "sizes":"192x192",
+    "type": "image/jpg"
+  },
+  {
+  "src": "./images/axionis.jpg",
+  "sizes": "512x512",
+  "type":"image/jpg"
+  }
+ ]
+}

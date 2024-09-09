@@ -1,0 +1,337 @@
+* {
+ padding: 0rem;
+ margin: 0rem;
+ outline: none;
+ font-family: 'Poppins', Sans-Serif;
+}
+
+body {
+ width: 100%;
+ color: rgb(240, 240, 240);
+ background: rgb(13, 13, 13);
+}
+
+main {
+ width: 100%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+.container {
+ width: 100%;
+ min-height: 95vh;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+
+.topbar {
+ width: 90%;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ list-style: none;
+ margin: 1rem 0rem;
+}
+
+.topbar > li {
+ height: 2rem;
+ display: flex;
+ align-items: center;
+}
+
+#axionis-name {
+ font-weight: 800;
+}
+
+#axionis-dp {
+ width: 2.6rem;
+ height: 2.6rem;
+ border-radius: 50%;
+ margin-right: 0.4rem;
+}
+
+#three-dot {
+ font-size: 1.6rem;
+}
+
+.action-tab {
+ width: 8.6rem;
+ height: auto;
+ position: absolute;
+ top: 4rem;
+ right: 4%;
+ align-self: flex-end;
+ display: none;
+ flex-direction: column;
+ align-items: flex-start;
+ justify-content: center;
+ list-style: none;
+ padding: 0.8rem 0.6rem;
+ background: rgb(24, 29, 34);
+ border-radius: 0.8rem;
+ transition: 800ms;
+ z-index: 1;
+}
+
+.show-actiontab {
+ display: flex;
+}
+
+.action-tab > li {
+ font-size: 0.9rem;
+ padding: 0.4rem 0.8rem;
+ background: rgb(24, 29, 34);
+ border-radius: 0.8rem;
+ transition: 500ms;
+ margin: 0.4rem 0rem;
+}
+
+.action-tab > li:hover {
+ background: rgb(13, 13, 13);
+}
+
+.action-tab  li > i {
+ margin-right: 0.2rem;
+}
+
+.to-bottom-btn {
+ width: 1.8rem;
+ height: 1.8rem;
+ position: fixed;
+ bottom: 15%;
+ display: none;
+ align-items: center;
+ justify-content: center;
+ font-size: 1.4rem;
+ padding: 0.6rem;
+ background: rgb(34, 35, 37);
+ border-radius: 50%;
+}
+
+.chatbox {
+ width: 90%;
+ height: 78vh;
+ display: flex;
+ flex-direction:  column;
+ padding: 4% 6% 0% 4%;
+ overflow-y: auto;
+}
+
+.default-screen {
+ width: 100%;
+ height: 100%;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+}
+
+.default-screen > img {
+ width: 6rem;
+ height: 6rem;
+ border-radius: 50%;
+}
+
+.default-screen > h3 {
+ margin: 0.5rem 0rem;
+}
+
+.default-screen > p {
+ font-size: 0.8rem;
+}
+
+.comment-text {
+ color: red;
+}
+
+.ai-divwrap {
+ width: 90%;
+ height: auto;
+ align-self: flex-start;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+.ai-message {
+ width: 86%;
+ height: auto;
+ font-size: 0.9rem;
+ padding: 1rem;
+ background: rgb(24, 29, 34);
+ border-top-right-radius: 1rem;
+ border-bottom-left-radius: 1rem;
+ border-bottom-right-radius: 1rem;
+ margin: 1rem 0rem 1rem 0rem;
+}
+
+.ai-response {
+ font-size: 0.9rem;
+ word-break: break-word;
+ white-space: pre-wrap;
+ line-height: 1.6rem;
+}
+
+.ai-dp {
+ width: 2.2rem;
+ height: 2.2rem;
+ align-self: flex-start;
+ object-fit: cover;
+ background-image: url('/images/axionis.jpg');
+ background-position: center;
+ background-size: cover;
+ border-radius: 50%;
+ margin: 1rem 0.5rem 0rem 0rem;
+}
+
+.usr-message {
+ width: auto;
+ max-width: 70%;
+ height: auto;
+ align-self: flex-end;
+ color: rgb(240, 240, 240);
+ font-size: 0.9rem;
+ padding: 1rem;
+ background: rgb(4, 48, 247);
+ border-top-left-radius: 1rem;
+ border-bottom-left-radius: 1rem;
+ border-bottom-right-radius: 1rem;
+}
+
+.chat-sender {
+  width: 84%;
+  height: 3.2rem;
+  position: absolute;
+  bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(30, 35, 37);
+  padding: 0rem 0.8rem;
+  border-radius: 2rem;
+  border: 0.1rem solid rgb(30, 35, 37);
+}
+
+.chat-sender:focus-within {
+  border: 0.06rem solid rgb(4, 48, 247);
+}
+
+#chat-input {
+  width: 90%;
+  height: 100%;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  padding-left: 0.6rem;
+  color: rgb(240, 240, 240);
+}
+
+#chat-input:focus ~ #send-icon,
+#chat-input:valid ~ #send-icon {
+  color: rgb(255, 255, 255);
+}
+
+#send-button {
+  width: auto;
+  height: 75%;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  padding: 1rem;
+  background-color: transparent;
+  border: none;
+  border-radius: 2rem;
+  transition: all 0.8s;
+}
+
+#send-button:hover {
+  background: rgb(4, 48, 247);
+}
+
+#send-button > #send-icon {
+  color: rgb(180, 180, 180);
+  transition: all 0.8s;
+}
+
+.loader {
+ width: 3.125rem;
+ aspect-ratio: 2;
+ --_g: no-repeat radial-gradient(circle closest-side, rgb(180, 180, 180) 90%, #0000);
+ background: var(--_g) 0% 50%, var(--_g) 50% 50%, var(--_g) 100% 50%;
+ background-size: calc(100% / 3) 50%;
+ animation: l3 1s infinite linear;
+}
+
+@keyframes l3 {
+  20% {
+    background-position: 0% 0%, 50% 50%, 100% 50%;
+  }
+  40% {
+    background-position: 0% 100%, 50% 0%, 100% 50%;
+  }
+  60% {
+    background-position: 0% 50%, 50% 100%, 100% 0%;
+  }
+  80% {
+    background-position: 0% 50%, 50% 50%, 100% 100%;
+  }
+}
+
+
+#about-ai,
+#about-dev {
+ width: 90%;
+ height: 88vh;
+ position: fixed;
+ bottom: 0%;
+ display: none;
+ flex-direction: column;
+ align-items: center;
+ padding: 1rem;
+ background: rgb(20, 21, 23);
+ border-top-right-radius: 1.2rem;
+ border-top-left-radius: 1.2rem;
+ z-index: 1;
+}
+
+#about-ai > ul,
+#about-dev > ul {
+ width: 90%;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ font-size: 1.5rem;
+ list-style: none;
+ margin: 1rem 0rem;
+}
+
+#about-ai > img,
+#about-dev > img {
+ width: 6rem;
+ height: 6rem;
+ object-fit: cover;
+ border-radius: 50%;
+ margin: 2rem 0rem 0.4rem 0rem;
+}
+
+#about-ai > p:nth-of-type(2) {
+ font-size: 0.8rem;
+ align-self: flex-start;
+ margin: 4rem 0rem;
+}
+
+#about-dev > p {
+ font-size: 0.9rem;
+ margin: 0.5rem 0rem;
+}
+
+
+@media (min-width: 726px) {
+  .ai-divwrap {
+   margin-left: -3%;
+  }
+}
