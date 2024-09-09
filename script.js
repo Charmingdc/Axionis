@@ -20,8 +20,8 @@ let aboutDev = document.querySelector('#about-dev');
 let scrollButton = document.querySelector('.to-bottom-btn');;
 
 
-const API = "AIzaSyCctnbLaK2K9QgUyspfv2cdTggjs8-f4pk";
-const genAI = new GoogleGenerativeAI(API);
+const API_KEY = "AIzaSyCctnbLaK2K9QgUyspfv2cdTggjs8-f4pk";
+const genAI = new GoogleGenerativeAI(API_KEY);
 const model = genAI.getGenerativeModel({ 
   model: "gemini-1.5-flash",
   systemInstruction: `Your name is Axionis. Whenever you are asked about your creator say that You are created by a code wizard named Charmingdc and his real name is Adebayo Muis. Remove all * or ** from your response and always reply in a very friendly and informal tone`,
