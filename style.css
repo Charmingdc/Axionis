@@ -168,7 +168,7 @@ main {
 }
 
 .ai-response {
- font-size: 0.9rem;
+ font-size: 0.8rem;
  word-break: break-word;
  white-space: pre-wrap;
  line-height: 1.6rem;
@@ -192,7 +192,7 @@ main {
  height: auto;
  align-self: flex-end;
  color: rgb(240, 240, 240);
- font-size: 0.9rem;
+ font-size: 0.8rem;
  padding: 1rem;
  background: rgb(4, 48, 247);
  border-top-left-radius: 1rem;
