@@ -4,11 +4,14 @@ Axionis is a generative ai, developed to let you access useful informations more
 ### Name
 Axionis
 
-## Description 
+### Description 
 Generative ai chatbot
 
-## Tech stacks
+### Tech stacks
 - HTML
 - CSS
 - JAVASCRIPT
 - GOOGLE GEMINI GENERATIVE API
+
+# Contributor
+Swag Azreal
