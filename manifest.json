@@ -1,7 +1,7 @@
 {
- "name": "Axionis - Generative AI",
+ "name": "Axionis - Friendly AI Chatbot",
  "short_name": "Axionis",
- "description": "Generative ai chatbot",
+ "description": "Friendly ai chatbot",
  "start_url": "./index.html",
  "background_color": "rgb(13, 13, 13)",
  "theme_color": "rgb(13, 13, 13)",
