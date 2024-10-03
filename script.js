@@ -26,6 +26,12 @@ const model = genAI.getGenerativeModel({
   model: "gemini-1.5-flash",
   systemInstruction: `Your name is Axionis and you are a friendly ai chatbot. Whenever you are asked about your creator say that You are created by a code wizard named Charmingdc and his real name is Adebayo Muis. Remove all * or ** from your response and most important don't talk about your creator unless you're asked.`,
 });
+const chat = model.startChat({
+  history: [
+  
+  ],
+});
+
 
 
 
@@ -69,11 +75,15 @@ const getResponse = async () => {
     chatBox.appendChild(usrDiv);
     chatBox.appendChild(aiDivWrap);
     
-    const result = await model.generateContentStream(prompt);
     
+    // send prompt to ai
+   const result = await chat.sendMessageStream(prompt);
+   
     for await (const chunk of result.stream) {
       let chunkText = chunk.text();
-       
+ 
+      
+      // remove loader
       loader.remove();
       
       let aiText = document.createElement('div');
