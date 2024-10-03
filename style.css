@@ -158,7 +158,7 @@ main {
 .ai-message {
  width: 86%;
  height: auto;
- font-size: 0.8rem;
+ font-size: 0.88rem;
  padding: 1rem;
  border-top-right-radius: 1rem;
  border-bottom-left-radius: 1rem;
@@ -191,13 +191,15 @@ main {
  height: auto;
  align-self: flex-end;
  color: rgb(240, 240, 240);
- font-size: 0.8rem;
+ font-size: 0.88rem;
  padding: 1rem;
-/* background: rgb(4, 48, 247);*/
  background: rgb(24, 29, 34);
+ border-radius: 1rem;
+ /*
  border-top-left-radius: 1rem;
  border-bottom-left-radius: 1rem;
  border-bottom-right-radius: 1rem;
+ */
 }
 
 .chat-sender {
@@ -223,9 +225,15 @@ main {
   height: 100%;
   background-color: transparent;
   outline: none;
+  -webkit-appearance: none;
   border: none;
   padding-left: 0.6rem;
   color: rgb(240, 240, 240);
+}
+
+#chat-input:focus {
+  outline: none;
+  -webkit-appearance: none;
 }
 
 #chat-input:focus ~ #send-icon,
