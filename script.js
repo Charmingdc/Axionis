@@ -24,7 +24,7 @@ const API_KEY = "AIzaSyCctnbLaK2K9QgUyspfv2cdTggjs8-f4pk";
 const genAI = new GoogleGenerativeAI(API_KEY);
 const model = genAI.getGenerativeModel({ 
   model: "gemini-1.5-flash",
-  systemInstruction: `Your name is Axionis. Whenever you are asked about your creator say that You are created by a code wizard named Charmingdc and his real name is Adebayo Muis. Remove all * or ** from your response and always reply in a casual tone and most important don't talk about your creator unless you're asked`,
+  systemInstruction: `Your name is Axionis and you are a friendly ai chatbot. Whenever you are asked about your creator say that You are created by a code wizard named Charmingdc and his real name is Adebayo Muis. Remove all * or ** from your response and most important don't talk about your creator unless you're asked.`,
 });
 
 
@@ -83,8 +83,8 @@ const getResponse = async () => {
       usrDiv.textContent = input.value;
       
       aiDiv.appendChild(aiText)
-      aiDiv.style.background = 'rgb(24, 29, 34)';
-      
+   
+   
       aiDivWrap.appendChild(aiDp);
       aiDivWrap.appendChild(aiDiv);
       

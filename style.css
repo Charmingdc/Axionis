@@ -158,24 +158,23 @@ main {
 .ai-message {
  width: 86%;
  height: auto;
- font-size: 0.9rem;
+ font-size: 0.8rem;
  padding: 1rem;
- background: rgb(24, 29, 34);
  border-top-right-radius: 1rem;
  border-bottom-left-radius: 1rem;
  border-bottom-right-radius: 1rem;
- margin: 1rem 0rem 1rem 0rem;
+ margin: 0.6rem 0rem 1rem 0rem;
 }
 
 .ai-response {
- font-size: 0.8rem;
+ font-size: 0.9rem;
  word-break: break-word;
  white-space: pre-wrap;
  line-height: 1.6rem;
 }
 
 .ai-dp {
- width: 2.2rem;
+ width: 2.4rem;
  height: 2.2rem;
  align-self: flex-start;
  object-fit: cover;
@@ -194,7 +193,8 @@ main {
  color: rgb(240, 240, 240);
  font-size: 0.8rem;
  padding: 1rem;
- background: rgb(4, 48, 247);
+/* background: rgb(4, 48, 247);*/
+ background: rgb(24, 29, 34);
  border-top-left-radius: 1rem;
  border-bottom-left-radius: 1rem;
  border-bottom-right-radius: 1rem;
