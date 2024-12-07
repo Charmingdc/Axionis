@@ -17,92 +17,100 @@ let aboutAi = document.querySelector('#about-ai');
 let viewDev = document.querySelector('#view-dev');
 let hideAboutDev = document.querySelector('#hide-aboutdev');
 let aboutDev = document.querySelector('#about-dev');
-let scrollButton = document.querySelector('.to-bottom-btn');;
+let scrollButton = document.querySelector('.to-bottom-btn');
+
+let history = [];
 
 
-const API_KEY = "AIzaSyCctnbLaK2K9QgUyspfv2cdTggjs8-f4pk";
+
+
+const API_KEY = "AIzaSyAaCWqLsGVNcLYznIiBLmH28nDncauuA0Y";
 const genAI = new GoogleGenerativeAI(API_KEY);
-const model = genAI.getGenerativeModel({ 
+const model = genAI.getGenerativeModel({
   model: "gemini-1.5-flash",
   systemInstruction: `Your name is Axionis and you are a friendly ai chatbot. Whenever you are asked about your creator say that You are created by a code wizard named Charmingdc and his real name is Adebayo Muis. Remove all * or ** from your response and most important don't talk about your creator unless you're asked.`,
 });
 const chat = model.startChat({
-  history: [
-  
-  ],
+  history: history,
 });
 
 
 
 
 const getResponse = async () => {
- 
+
   defaultScreen.style.display = 'none';
-  
+
   let aiDivWrap = document.createElement('div');
   aiDivWrap.classList.add('ai-divwrap');
-  
+
   let aiDp = document.createElement('div');
   aiDp.classList.add('ai-dp');
-  
+
   let aiDiv = document.createElement('div');
   aiDiv.classList.add('ai-message')
-      
+
   let usrDiv = document.createElement('div');
   usrDiv.classList.add('usr-message')
-  
+
   const prompt = input.value.trim(); // would typically be an input value
-  
+
   if (prompt == '') {
     chatSender.style.border = '0.06rem solid red';
-    
-    setTimeout( () => {
+
+    setTimeout(() => {
       chatSender.style.border = 'none';
     }, 2000);
-    
+
   } else {
-    
+
     let loader = document.createElement('div');
     loader.classList.add('loader');
     usrDiv.textContent = input.value;
-      
+
     aiDiv.appendChild(loader)
     aiDiv.style.background = 'transparent';
-      
+
     aiDivWrap.appendChild(aiDp);
     aiDivWrap.appendChild(aiDiv);
-      
+
     chatBox.appendChild(usrDiv);
     chatBox.appendChild(aiDivWrap);
-    
-    
+
+
+    history.push({
+      role: "user", // The role is 'user' to denote this is the user's message
+      parts: [{ text: prompt }], // Store the prompt text inside the parts array
+    });
+
     // send prompt to ai
-   const result = await chat.sendMessageStream(prompt);
-   
+    const result = await chat.sendMessageStream(prompt);
+
+
     for await (const chunk of result.stream) {
       let chunkText = chunk.text();
- 
-      
+
       // remove loader
       loader.remove();
-      
+
       let aiText = document.createElement('div');
       aiText.classList.add('ai-response')
       aiText.innerText = chunkText;
-      
+
       usrDiv.textContent = input.value;
-      
+
       aiDiv.appendChild(aiText)
-   
-   
+
+
       aiDivWrap.appendChild(aiDp);
       aiDivWrap.appendChild(aiDiv);
-      
+
       chatBox.appendChild(usrDiv);
       chatBox.appendChild(aiDivWrap);
-      
+
     }
-    
+   
+   
     input.value = ''; // clear the input after a message is sent
   }
 };
@@ -137,7 +145,7 @@ scrollButton.addEventListener('click', scrollToBottom);
 
 // Listen for new messages being added to the chat container
 const observer = new MutationObserver(() => {
-    newMessageAdded();
+  newMessageAdded();
 });
 observer.observe(chatBox, { childList: true });
 
