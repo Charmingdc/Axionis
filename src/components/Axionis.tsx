@@ -14,7 +14,6 @@ const Axionis = () => {
   };
   
   
-
   return (
     <>
       <section className="container">
@@ -51,11 +50,11 @@ const Axionis = () => {
        <div className="chatbox">
         { 
           history.length > 0 ? (
-           history.map((chat, index) => {
+           history.map((chat, index) => (
             <div key={index}>
-             {chat.text}
+             {chat.parts[0]}
             </div>
-           })
+           ))
           ) : (
            <div className="default-screen">
             <img 

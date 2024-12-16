@@ -11,7 +11,7 @@ const model = genAI.getGenerativeModel({
 
 
 const useChat = () => {
-  const [history, setHistory] = useState <{role: string; text: string} []>([]);
+  const [history, setHistory] = useState <{role: string; parts: {text: string}[] } []>([]);
 
   const getResponse = async (prompt: string) => {
     try {
@@ -19,7 +19,10 @@ const useChat = () => {
       const chat = model.startChat({ history });
 
       // Send user message
-      const userMessage = { role: 'user', text: prompt };
+      const userMessage = { 
+       role: 'user',
+       parts: [{text: prompt }]
+      };
       const updatedHistory = [...history, userMessage];
 
       // Update history state
@@ -27,7 +30,10 @@ const useChat = () => {
 
       // Get AI response
       const response = await chat.send({ prompt });
-      const aiMessage = { role: 'assistant', text: response.text };
+      const aiMessage = { 
+       role: 'assistant', 
+       parts: [{text: response.text}]
+      };
 
       // Update history with AI response
       setHistory((prev) => [...prev, aiMessage]);
@@ -37,7 +43,7 @@ const useChat = () => {
       // create a response message
       const errorMessage = {
         role: 'assistant', 
-        text: 'Something went wrong, try again',
+        parts: [{text: 'Something went wrong, try again'}],
       }
       
       // update history with error message
