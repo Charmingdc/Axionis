@@ -26,10 +26,10 @@ const useChat = () => {
       setHistory(updatedHistory);
 
       // Get AI response
-      const response = await chat.sendMessageStream({ prompt });
+      const response = await chat.sendMessageStream(prompt);
       
       const chunks: string[] = [];
-      for await (const chunk of result.stream) {
+      for await (const chunk of response.stream) {
         const chunkText = chunk.text();
         chunks.push(chunkText);
       }
