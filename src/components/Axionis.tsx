@@ -20,9 +20,9 @@ const Axionis = () => {
         <ul className="topbar">
          <li>
           <img 
-           src={AxionisImg} 
-           alt="Axionis" 
-           id="axionis-dp" />
+            src={AxionisImg} 
+            alt="Axionis" 
+            id="axionis-dp" />
            
           <h3 id="axionis-name">
             Axionis
@@ -67,7 +67,7 @@ const Axionis = () => {
               Hi, I'm Axionis. Your friendly ai chatbot.
             </p>
          </div>
-        )};
+        )}
        </div>
       
       

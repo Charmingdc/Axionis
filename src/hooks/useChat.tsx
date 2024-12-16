@@ -41,7 +41,6 @@ const useChat = () => {
 
       // Update history with AI response
       setHistory((prev) => [...prev, aiMessage]);
-      
     } catch (err) {
       // create a response message
       const errorMessage = {
