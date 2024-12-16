@@ -2,7 +2,7 @@ import AxionisImg from '/public/axionis.jpg'
 import PWABadge from './PWABadge.tsx'
 import './App.css'
 
-function App() {
+const App = () => {
 
   return (
     <>
@@ -57,7 +57,7 @@ function App() {
        <div className="chat-sender">
         <input 
           type="text"
-          value={() => {}}
+          value='Hello'
           placeholder="Send a message" />
           
         <button className="send-button">
