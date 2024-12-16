@@ -220,7 +220,7 @@ main {
   border: 0.06rem solid rgb(4, 48, 247);
 }
 
-#chat-input {
+.chat-input {
   width: 90%;
   height: 100%;
   background-color: transparent;
@@ -231,17 +231,17 @@ main {
   color: rgb(240, 240, 240);
 }
 
-#chat-input:focus {
+.chat-input:focus {
   outline: none;
   -webkit-appearance: none;
 }
 
-#chat-input:focus ~ #send-icon,
-#chat-input:valid ~ #send-icon {
+.chat-input:focus ~ #send-icon,
+.chat-input:valid ~ #send-icon {
   color: rgb(255, 255, 255);
 }
 
-#send-button {
+.send-button {
   width: auto;
   height: 75%;
   outline: none;
@@ -256,11 +256,11 @@ main {
   transition: all 0.8s;
 }
 
-#send-button:hover {
+.send-button:hover {
   background: rgb(4, 48, 247);
 }
 
-#send-button > #send-icon {
+.send-button > #send-icon {
   color: rgb(180, 180, 180);
   transition: all 0.8s;
 }

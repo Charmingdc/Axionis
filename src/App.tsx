@@ -1,8 +1,16 @@
+import { useState } from 'react'
+
+
 import AxionisImg from '/public/axionis.jpg'
 import PWABadge from './PWABadge.tsx'
 import './App.css'
 
+
+
 const App = () => {
+  const [prompt, setPrompt] = useState<string>('');
+  
+  
 
   return (
     <>
@@ -58,13 +66,14 @@ const App = () => {
         <input 
           type="text"
           value='Hello'
-          placeholder="Send a message" />
+          className="chat-input"
+          placeholder="Send a message"
+          onChange={(e) => setPrompt(e.target.value)} />
           
-        <button className="send-button">
+        <button className="send-button" onClick={handleSubmit} >
          <i className="fa-solid fa-paper-plane" id="send-icon"></i>
         </button>
        </div>
-       
        
       </section>
       
