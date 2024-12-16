@@ -52,8 +52,8 @@ const Axionis = () => {
         { 
           history.length > 0 ? (
            history.map((chat, index) => {
-            <div>
-             {history.text}
+            <div key={index}>
+             {chat.text}
             </div>
            })
           ) : (

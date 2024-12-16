@@ -19,7 +19,7 @@ const useChat = () => {
       const chat = model.startChat({ history });
 
       // Send user message
-      const userMessage = { role: 'user', parts: [{ text: prompt }] };
+      const userMessage = { role: 'user', text: prompt };
       const updatedHistory = [...history, userMessage];
 
       // Update history state
@@ -27,7 +27,7 @@ const useChat = () => {
 
       // Get AI response
       const response = await chat.send({ prompt });
-      const aiMessage = { role: 'assistant', parts: [{ text: response.text }] };
+      const aiMessage = { role: 'assistant', text: response.text };
 
       // Update history with AI response
       setHistory((prev) => [...prev, aiMessage]);
@@ -37,7 +37,7 @@ const useChat = () => {
       // create a response message
       const errorMessage = {
         role: 'assistant', 
-        parts: [{text: 'Something went wrong, try again'}]
+        text: 'Something went wrong, try again',
       }
       
       // update history with error message
