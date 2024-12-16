@@ -2,14 +2,10 @@ import { useState } from 'react'
 import useChat from '../hooks/useChat.tsx';
 
 import AxionisImg from '/public/axionis.jpg'
-import PWABadge from '../PWABadge.tsx'
-import './App.css'
 
 
-
-const App = () => {
+const Axionis = () => {
   const [input, setInput] = useState<string>('');
-  const [loading, setLoading] = useState<boolean>(false);
   const { history, getResponse } = useChat()
   
   
