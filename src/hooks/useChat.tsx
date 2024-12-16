@@ -26,10 +26,17 @@ const useChat = () => {
       setHistory(updatedHistory);
 
       // Get AI response
-      const response = await chat.send({ prompt });
+      const response = await chat.sendMessageStream({ prompt });
+      
+      const chunks: string[] = [];
+      for await (const chunk of result.stream) {
+        const chunkText = chunk.text();
+        chunks.push(chunkText);
+      }
+      
       const aiMessage = { 
        role: 'assistant', 
-       parts: [{text: response.text}]
+       parts: [{text: chunks.join('')}]
       };
 
       // Update history with AI response
@@ -40,7 +47,7 @@ const useChat = () => {
       // create a response message
       const errorMessage = {
         role: 'assistant', 
-        parts: [{text: 'Something went wrong, try again'}],
+        parts: [{text: 'Sorry, something went wrong 😔'}],
       }
       
       // update history with error message
