@@ -55,7 +55,11 @@ const App = () => {
        <div className="chatbox">
         { 
           history.length > 0 ? (
-           <div> Testing </div>
+           history.map((chat, index) => {
+            <div>
+             {history.text}
+            </div>
+           })
           ) : (
            <div className="default-screen">
             <img 
@@ -75,8 +79,8 @@ const App = () => {
        <div className="chat-sender">
         <input 
           type="text"
-          value='Hello'
-          className={input}
+          value={input}
+          className="chat-input"
           placeholder="Send a message"
           onChange={(e) => setInput(e.target.value)} />
           
