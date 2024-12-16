@@ -13,7 +13,6 @@ const Axionis = () => {
     await getResponse(input); // await response from ai
   };
   
-  
   return (
     <>
       <section className="container">
@@ -52,7 +51,7 @@ const Axionis = () => {
           history.length > 0 ? (
            history.map((chat, index) => (
             <div key={index}>
-             {chat.parts[0]}
+             {chat.parts[0].text}
             </div>
            ))
           ) : (
