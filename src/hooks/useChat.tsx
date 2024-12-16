@@ -29,7 +29,7 @@ const useChat = () => {
       const response = await chat.sendMessageStream(prompt);
       
       const chunks: string[] = [];
-      for await (const chunk of response.stream) {
+       for await (const chunk of response.stream) {
         const chunkText = chunk.text();
         chunks.push(chunkText);
       }
@@ -41,7 +41,7 @@ const useChat = () => {
 
       // Update history with AI response
       setHistory((prev) => [...prev, aiMessage]);
-    } catch (err) {
+    } catch (err: any) {
       // create a response message
       const errorMessage = {
         role: 'assistant', 
