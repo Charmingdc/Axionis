@@ -11,7 +11,7 @@ const model = genAI.getGenerativeModel({
 
 
 const useChat = () => {
-  const [history, setHistory] = useState <{role: string; parts: { text: string }[]} []>([]);
+  const [history, setHistory] = useState <{role: string; text: string} []>([]);
 
   const getResponse = async (prompt: string) => {
     try {
