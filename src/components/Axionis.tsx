@@ -35,7 +35,6 @@ const Axionis = () => {
         </li>
        </ul>
        
-       
        <ul className="action-tab">
          <li>
            <i className="fa-solid fa-circle-user"></i> Developer
@@ -47,7 +46,6 @@ const Axionis = () => {
            <i className="fa-solid fa-edit"></i> New chat
          </li>
        </ul>
-       
        
        <div className="chatbox">
         { 
