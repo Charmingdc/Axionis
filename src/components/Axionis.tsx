@@ -159,25 +159,27 @@ const Axionis = () => {
              <h2>
                How can i help you today?
             </h2>
-            <div class="prompt-wrapper">
+            
+            <div className="prompt-wrapper">
              <div>
-              <div class="prompt-box">
+              <div>
                 How do i create a resume 
               </div>
            
-              <div class="prompt-box">
+              <div>
                 can you suggest a unique hobby to try?
               </div>
            
-              <div class="prompt-box">
+              <div>
                 what's the best way to learn guitar 
               </div>
            
-              <div class="prompt-box">
+              <div>
                 what's the best way to learn guitar 
               </div>
+             </div>
+            
             </div>
-           </div>
            </div>
         )}
         
