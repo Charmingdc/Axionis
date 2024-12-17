@@ -10,8 +10,8 @@
 
 body {
  width: 100%;
- color: rgb(240, 240, 240);
- background: rgb(13, 13, 13);
+ color: var(--clr);
+ background: var(--bg);
 }
 
 main {
@@ -66,33 +66,29 @@ main {
  top: 4rem;
  right: 4%;
  align-self: flex-end;
- display: none;
+ display: flex;
  flex-direction: column;
  align-items: flex-start;
  justify-content: center;
  list-style: none;
  padding: 0.8rem 0.6rem;
- background: rgb(24, 29, 34);
+ background: var(--shade);
  border-radius: 0.8rem;
  transition: 800ms;
  z-index: 1;
 }
 
-.show-actiontab {
- display: flex;
-}
-
 .action-tab > li {
  font-size: 0.9rem;
  padding: 0.4rem 0.8rem;
- background: rgb(24, 29, 34);
+ background: var(--shade);
  border-radius: 0.8rem;
  transition: 500ms;
  margin: 0.4rem 0rem;
 }
 
 .action-tab > li:hover {
- background: rgb(13, 13, 13);
+ background: var(--bg);
 }
 
 .action-tab  li > i {
@@ -193,10 +189,10 @@ main {
  max-width: 70%;
  height: auto;
  align-self: flex-end;
- color: rgb(240, 240, 240);
+ color: var(--clr);
  font-size: 0.88rem;
  padding: 1rem;
- background: rgb(24, 29, 34);
+ background: var(--shade);
  border-radius: 1rem;
  /*
  border-top-left-radius: 1rem;
@@ -213,14 +209,14 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(30, 35, 37);
+  background-color: var(--shade-two);
   padding: 0rem 0.8rem;
   border-radius: 2rem;
-  border: 0.1rem solid rgb(30, 35, 37);
+  border: 0.1rem solid var(--shade-two);
 }
 
 .chat-sender:focus-within {
-  border: 0.06rem solid rgb(4, 48, 247);
+  border: 0.06rem solid var(--sclr);
 }
 
 .chat-input {
@@ -231,7 +227,7 @@ main {
   -webkit-appearance: none;
   border: none;
   padding-left: 0.6rem;
-  color: rgb(240, 240, 240);
+  color: var(--clr);
 }
 
 .chat-input:focus {
@@ -245,8 +241,8 @@ main {
 }
 
 .send-button {
-  width: auto;
-  height: 75%;
+  width: 2rem;
+  height: 2rem;
   outline: none;
   display: flex;
   align-items: center;
@@ -260,7 +256,7 @@ main {
 }
 
 .send-button:hover {
-  background: rgb(4, 48, 247);
+  background: var(--sclr);
 }
 
 .send-button > #send-icon {
@@ -293,8 +289,8 @@ main {
 }
 
 
-#about-ai,
-#about-dev {
+.about-ai,
+.about-dev {
  width: 90%;
  height: 88vh;
  position: fixed;
@@ -303,14 +299,14 @@ main {
  flex-direction: column;
  align-items: center;
  padding: 1rem;
- background: rgb(20, 21, 23);
+ background: var(--modals-bg);
  border-top-right-radius: 1.2rem;
  border-top-left-radius: 1.2rem;
  z-index: 1;
 }
 
-#about-ai > ul,
-#about-dev > ul {
+.about-ai > ul,
+.about-dev > ul {
  width: 90%;
  display: flex;
  align-items: center;
@@ -320,8 +316,8 @@ main {
  margin: 1rem 0rem;
 }
 
-#about-ai > img,
-#about-dev > img {
+.about-ai > img,
+.about-dev > img {
  width: 6rem;
  height: 6rem;
  object-fit: cover;
@@ -329,15 +325,39 @@ main {
  margin: 2rem 0rem 0.4rem 0rem;
 }
 
-#about-ai > p:nth-of-type(2) {
+.about-ai > p:nth-of-type(2) {
  font-size: 0.8rem;
  align-self: flex-start;
  margin: 4rem 0rem;
 }
 
-#about-dev > p {
+.about-dev > p {
  font-size: 0.9rem;
  margin: 0.5rem 0rem;
+}
+
+
+
+@media (prefers-color-scheme: dark) {
+ :root {
+   --clr: rgb(240, 240, 240);
+   --bg: rgb(13, 13, 13);
+   --shade:  rgb(24, 29, 34);
+   --shade-two: rgb(30, 35, 37);
+   --sclr: rgb(4, 48, 247);
+   --modals-bg: rgb(20, 21, 23);
+ }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+   --clr: rgb(20, 20, 20);
+   --bg: rgb(240, 240, 240);
+   --shade: rgb(220, 220, 220);
+   --shade-two: rgb(200, 200, 200);
+   --sclr: rgb(4, 48, 247); 
+   --modals-bg: rgb(255, 255, 255);
+  }
 }
 
 
