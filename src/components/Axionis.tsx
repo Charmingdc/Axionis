@@ -11,10 +11,9 @@ const Axionis = () => {
   const [openMenu, setOpenMenu] = useState<boolean>(false);
   const [about, setAbout] = useState<boolean>(false);
   const [openModel, setOpenModel] = useState<boolean>(false);
-  const [clear, setClear] = useState<boolean>(false);
   const [isLoading, setIsloading] = useState<boolean>(false);
   const { history, getResponse } = useChat();
-  const [messages, setMessages] = useState<{role: string; parts: {text: string}[] } []>([]);
+  const [messages, setMessages] = useState<{role: string; parts: {text: string}[] } []>(history);
 
   
   const handleSubmit = async () => {
