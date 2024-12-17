@@ -35,7 +35,7 @@ const useChat = () => {
       }
       
       const aiMessage = { 
-       role: 'assistant', 
+       role: 'model', 
        parts: [{text: chunks.join('')}]
       };
 
@@ -44,7 +44,7 @@ const useChat = () => {
     } catch (err: any) {
       // create a response message
       const errorMessage = {
-        role: 'assistant', 
+        role: 'model', 
         parts: [{text: `Sorry, something went wrong: ${err.message}`}],
       }
       
