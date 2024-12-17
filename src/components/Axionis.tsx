@@ -23,7 +23,6 @@ const Axionis = () => {
   
   const handleClear = () => {
     setMessages([]);
-    alert('Message cleared');
   };
   
   
@@ -168,7 +167,7 @@ const Axionis = () => {
               Hi, I'm Axionis. Your friendly ai chatbot.
             </p>
          </div>
-        )};
+        )}
         
         {isLoading && (
           <div className="ai-divwrap">
