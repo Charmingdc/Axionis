@@ -2,8 +2,8 @@ import { useState } from 'react'
 import useChat from '../hooks/useChat.tsx';
 
 import AxionisImg from '/public/axionis.jpg'
-//import ThreeDotsVertical from '../assets/threeDotsVertical.svg';
-//import SendIcon from '../assets/send.svg';
+
+
 
 const Axionis = () => {
   const [input, setInput] = useState<string>('');
@@ -49,9 +49,21 @@ const Axionis = () => {
         { 
           history.length > 0 ? (
            history.map((chat, index) => (
-            <div key={index}>
-             {chat.parts[0].text}
-            </div>
+            chat.role === 'user' ? (
+              <div key={index} className="usr-message">
+                {chat.parts[0].text}
+              </div>
+             ) : (
+              <div key={index} className="ai-divwrap">
+               <div className="ai-dp"></div>
+               
+               <div className="ai-message">
+                <div className="ai-response">
+                  {chat.parts[0].text}
+                </div>
+               </div>
+              </div>
+             )
            ))
           ) : (
            <div className="default-screen">

@@ -181,7 +181,7 @@ main {
  height: 2.2rem;
  align-self: flex-start;
  object-fit: cover;
- background-image: url('/axionis.jpg');
+ background-image: url('/public/axionis.jpg');
  background-position: center;
  background-size: cover;
  border-radius: 50%;
