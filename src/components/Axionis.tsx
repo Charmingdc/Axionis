@@ -2,8 +2,8 @@ import { useState } from 'react'
 import useChat from '../hooks/useChat.tsx';
 
 import AxionisImg from '/public/axionis.jpg'
-import ThreeDotsVertical from '../assets/threeDotsVertical.svg';
-import SendIcon from '../assets/send.svg';
+//import ThreeDotsVertical from '../assets/threeDotsVertical.svg';
+//import SendIcon from '../assets/send.svg';
 
 const Axionis = () => {
   const [input, setInput] = useState<string>('');
@@ -29,9 +29,7 @@ const Axionis = () => {
           </h3>
         </li>
         <li>
-          <img 
-           src={ThreeDotsVertical}
-           alt="Three dots vertical" />
+         <i className="fa-solid fa-ellipsis-vertical" id="three-dot"></i>
         </li>
        </ul>
        
@@ -80,9 +78,7 @@ const Axionis = () => {
           onChange={(e) => setInput(e.target.value)} />
           
         <button className="send-button" onClick={handleSubmit} >
-         <img 
-           src={SendIcon}
-           alt="Send icon" />
+         <i className="fa-solid fa-paper-plane" id="send-icon"></i>
         </button>
        </div>
        
