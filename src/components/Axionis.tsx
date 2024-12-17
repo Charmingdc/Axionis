@@ -156,16 +156,29 @@ const Axionis = () => {
            ))
           ) : (
            <div className="default-screen">
-            <img 
-              src={AxionisImg}
-              alt="Axionis Chatbot" />
-            <h3>
-              Axionis
-            </h3>
-            <p>
-              Hi, I'm Axionis. Your friendly ai chatbot.
-            </p>
-         </div>
+             <h2>
+               How can i help you today?
+            </h2>
+            <div class="prompt-wrapper">
+             <div>
+              <div class="prompt-box">
+                How do i create a resume 
+              </div>
+           
+              <div class="prompt-box">
+                can you suggest a unique hobby to try?
+              </div>
+           
+              <div class="prompt-box">
+                what's the best way to learn guitar 
+              </div>
+           
+              <div class="prompt-box">
+                what's the best way to learn guitar 
+              </div>
+            </div>
+           </div>
+           </div>
         )}
         
         {isLoading && (

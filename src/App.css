@@ -127,18 +127,46 @@ main {
  justify-content: center;
 }
 
-.default-screen > img {
- width: 6rem;
- height: 6rem;
- border-radius: 50%;
-}
-
-.default-screen > h3 {
+.default-screen > h2 {
  margin: 0.5rem 0rem;
 }
 
 .default-screen > p {
  font-size: 0.8rem;
+}
+
+.prompt-wrapper {
+  width: 90%;
+  max-width: 100%;
+  height: auto;
+  position: absolute;
+  bottom: 14%;
+  display: flex;
+  overflow-x: auto; 
+  white-space: nowrap;
+}
+
+.prompt-wrapper > div {
+  transform: translateX(0%);
+  animation: moveHorizontally 10s linear infinite;
+}
+
+.prompt-wrapper > div > div {
+  width: auto;
+  height: 2.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.5rem;
+  color: var(--clr);
+  background: var(--shade);
+  border-radius: 3rem;
+  margin: 0.5rem;
+  transition: transform 0.7s ease-out;
+}
+
+.prompt-wrapper > div:active {
+  animation: elastic 0.9s ease-out;
 }
 
 .comment-text {
@@ -288,6 +316,31 @@ main {
   }
 }
 
+/* Keyframes for auto-scroll animation */
+@keyframes moveHorizontally {
+  50% {
+    transform: translateX(-80%);
+  }
+}
+
+/* Keyframes for elastic effect */
+@keyframes elastic {
+  0% {
+    transform: scale(1); 
+  }
+  30% {
+    transform: scale(1.2); 
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  70% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 
 .about-ai,
 .about-dev {
