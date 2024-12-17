@@ -12,8 +12,7 @@ const Axionis = () => {
   const [about, setAbout] = useState<boolean>(false);
   const [openModel, setOpenModel] = useState<boolean>(false);
   const [isLoading, setIsloading] = useState<boolean>(false);
-  const { history, getResponse } = useChat();
-  const [messages, setMessages] = useState<{role: string; parts: {text: string}[] } []>(history);
+  let { history, getResponse } = useChat();
 
   
   const handleSubmit = async () => {
@@ -22,7 +21,7 @@ const Axionis = () => {
   };
   
   const handleClear = () => {
-    setMessages([]);
+    history = []; // clear all past conversations 
   };
   
   
@@ -137,8 +136,8 @@ const Axionis = () => {
       
       <div className="chatbox">
         { 
-          messages.length > 0 ? (
-           messages.map((chat, index) => (
+          history.length > 0 ? (
+           history.map((chat, index) => (
             chat.role === 'user' ? (
               <div key={index} className="usr-message">
                 {chat.parts[0].text}
