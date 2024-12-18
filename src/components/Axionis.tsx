@@ -32,8 +32,8 @@ const Axionis = () => {
       
       const randomIndex: number = Math.floor(Math.random() * data.length)
       const selectedSuggestions: string[] = Array.from({ length: 5 }, (_, i) => data[(randomIndex + i) % data.length].prompt);
-
-
+      
+      alert(selectedSuggestions);
       setSuggestions(selectedSuggestions); 
     } catch (error) {
       console.error('Error fetching suggestions:', error);
@@ -192,7 +192,7 @@ const Axionis = () => {
           ) : (
            <div className="default-screen">
              <h3>
-               How can i help you today?
+               What can I help with?
             </h3>
             
             <div className="prompt-wrapper">
