@@ -13,6 +13,7 @@ interface Suggestion {
 const Axionis = () => {
   const [input, setInput] = useState<string>('');
   const [suggestions, setSuggestions] = useState<string[]>([]);
+  const [isSuggestionClicked, setIsSuggestionClicked] = useState<boolean>(true);
   const [openMenu, setOpenMenu] = useState<boolean>(false);
   const [about, setAbout] = useState<boolean>(false);
   const [openModel, setOpenModel] = useState<boolean>(false);
@@ -41,20 +42,27 @@ const Axionis = () => {
     }
   };
   
-  const handleSubmit = async () => {
-    setIsloading(true); // set loading state to true
-    await getResponse(input); // await response from ai
-    setIsloading(false); // set loading state to false
-  };
-  
   const setAsPrompt = (selectedIndex: number) => {
     const clickedSuggestion: string | undefined = suggestions.find((_, index) => index === selectedIndex);
     
     if (clickedSuggestion === undefined) return;
     
     setInput(clickedSuggestion); // set as input value
-    handleSubmit(); // call submit function
+    setIsSuggestionClicked(true); // set suggestion clicked state to true
   }
+  
+  const handleSubmit = async () => {
+    setIsloading(true); // set loading state to true
+    await getResponse(input); // await response from ai
+    setIsloading(false); // set loading state to false
+  };
+  
+  useEffect(() => {
+    if (isSuggestionClicked) {
+      handleSubmit();
+      setIsSuggestionClicked(false); // reset suggestion clicked state
+    }
+  }, [isSuggestionClicked]);
  
   const handleClear = () => {
     history = []; // clear all past conversations 
