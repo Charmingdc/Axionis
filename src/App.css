@@ -147,11 +147,6 @@ main {
 }
 
 .prompt-wrapper > div {
-  transform: translateX(0%);
-  animation: moveHorizontally 15s linear infinite;
-}
-
-.prompt-wrapper > div > div {
   width: auto;
   height: 2.7rem;
   display: inline-flex;
@@ -169,7 +164,7 @@ main {
   animation: elastic 0.9s ease-out;
 }
 
-.comment-text {
+.error-text {
  color: red;
 }
 
@@ -313,13 +308,6 @@ main {
   }
   80% {
     background-position: 0% 50%, 50% 50%, 100% 100%;
-  }
-}
-
-/* Keyframes for auto-scroll animation */
-@keyframes moveHorizontally {
-  50% {
-    transform: translateX(-80%);
   }
 }
 

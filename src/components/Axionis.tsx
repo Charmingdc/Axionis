@@ -55,12 +55,15 @@ const Axionis = () => {
     setIsloading(true); // set loading state to true
     await getResponse(input); // await response from ai
     setIsloading(false); // set loading state to false
+    
+    setInput(''); // reset input
   };
   
   useEffect(() => {
     if (isSuggestionClicked) {
       handleSubmit();
       setIsSuggestionClicked(false); // reset suggestion clicked state
+      setInput(''); // reset input 
     }
   }, [isSuggestionClicked]);
  
@@ -205,15 +208,13 @@ const Axionis = () => {
             </h3>
             
             <div className="prompt-wrapper">
-             <div>
               {suggestions.map((suggestion, index) => (
                 <div key={index} onClick={() => setAsPrompt(index)}>
                   {suggestion}
                 </div>
                ))}
-             </div>
-            
             </div>
+            
            </div>
         )}
         
