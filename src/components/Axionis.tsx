@@ -70,6 +70,7 @@ const Axionis = () => {
  
   const handleClear = () => {
     clearHistory(); // clear all past conversations 
+    setOpenMenu(false); // close pop-up menu
     getSuggestions(); // get fresh suggestions 
   };
   
