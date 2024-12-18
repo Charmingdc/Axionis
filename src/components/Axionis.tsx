@@ -35,7 +35,7 @@ const Axionis = () => {
       
       alert(selectedSuggestions);
       setSuggestions(selectedSuggestions); 
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error fetching suggestions:', error);
       alert(error.message)
     }
