@@ -47,11 +47,10 @@ const Axionis = () => {
   };
   
   const setAsPrompt = (selectedIndex: number) => {
-    const clickedSuggestion = suggestions.find((curSuggestion, index) => index === selectedIndex);
+    const clickedSuggestion: string = suggestions.find((_, index) => index === selectedIndex);
     
     setInput(clickedSuggestion); // set as input value
     handleSubmit(); // call submit function
-    
   }
  
   const handleClear = () => {
