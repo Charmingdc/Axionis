@@ -23,7 +23,7 @@ const Axionis = () => {
  
   useEffect(() => {
     getSuggestions();
-  });
+  }, []);
   
   const getSuggestions = async (): Promise<void> => {
     try {
