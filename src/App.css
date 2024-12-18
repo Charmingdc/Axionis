@@ -133,8 +133,8 @@ main {
  border-radius: 50%;
 }
 
-.default-screen > h3 {
- margin: 0.5rem 0rem;
+.default-screen h3 {
+ margin: 0.8rem 0rem;
 }
 
 .default-screen > p {
