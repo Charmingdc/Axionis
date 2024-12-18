@@ -13,7 +13,7 @@ interface Suggestion {
 const Axionis = () => {
   const [input, setInput] = useState<string>('');
   const [suggestions, setSuggestions] = useState<string[]>([]);
-  const [isSuggestionClicked, setIsSuggestionClicked] = useState<boolean>(true);
+  const [isSuggestionClicked, setIsSuggestionClicked] = useState<boolean>(false);
   const [openMenu, setOpenMenu] = useState<boolean>(false);
   const [about, setAbout] = useState<boolean>(false);
   const [openModel, setOpenModel] = useState<boolean>(false);
