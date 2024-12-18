@@ -212,6 +212,7 @@ const Axionis = () => {
             
             <img 
               src={AxionisImg}
+              className="ai-img"
               alt="Axionis Img" />
             
             <div className="prompt-wrapper">

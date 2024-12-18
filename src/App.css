@@ -127,7 +127,7 @@ main {
  justify-content: center;
 }
 
-.default-screen > img {
+.default-screen .ai-img {
  width: 6rem;
  height: 6rem;
  border-radius: 50%;
