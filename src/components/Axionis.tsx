@@ -206,9 +206,13 @@ const Axionis = () => {
            ))
           ) : (
            <div className="default-screen">
-             <h2>
+             <h3>
                What can I help with?
-            </h2>
+            </h3>
+            
+            <img 
+              src={AxionisImg}
+              alt="Axionis Img" />
             
             <div className="prompt-wrapper">
               {suggestions.map((suggestion, index) => (

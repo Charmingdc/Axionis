@@ -127,7 +127,13 @@ main {
  justify-content: center;
 }
 
-.default-screen > h2 {
+.default-screen > img {
+ width: 6rem;
+ height: 6rem;
+ border-radius: 50%;
+}
+
+.default-screen > h3 {
  margin: 0.5rem 0rem;
 }
 
