@@ -127,7 +127,7 @@ main {
  justify-content: center;
 }
 
-.default-screen > h2 {
+.default-screen > h3 {
  margin: 0.5rem 0rem;
 }
 
@@ -148,16 +148,16 @@ main {
 
 .prompt-wrapper > div {
   transform: translateX(0%);
-  animation: moveHorizontally 10s linear infinite;
+  animation: moveHorizontally 15s linear infinite;
 }
 
 .prompt-wrapper > div > div {
   width: auto;
-  height: 2.5rem;
+  height: 2.7rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0 0.5rem;
+  padding: 0 0.8rem;
   color: var(--clr);
   background: var(--shade);
   border-radius: 3rem;

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import useChat from '../hooks/useChat.tsx';
 
 import AxionisImg from '/public/axionis.jpg';
@@ -6,20 +6,54 @@ import CharmingdcImg from '../assets/charmingdc.jpg';
 
 
 
+interface Suggestion {
+  prompt: string; 
+}
+
 const Axionis = () => {
   const [input, setInput] = useState<string>('');
+  const [suggestions, setSuggestions] = useState<string[]>([]);
   const [openMenu, setOpenMenu] = useState<boolean>(false);
   const [about, setAbout] = useState<boolean>(false);
   const [openModel, setOpenModel] = useState<boolean>(false);
   const [isLoading, setIsloading] = useState<boolean>(false);
   let { history, getResponse } = useChat();
+  
+  
+ 
+  useEffect(() => {
+    getSuggestions();
+  });
+  
+  const getSuggestions = async (): Promise<void> => {
+    try {
+      const response = await fetch('../assets/suggestions.json');
+      const data: Suggestion[] = await response.json();
+      
+      const randomIndex: number = Math.floor(Math.random() * data.length)
+      const selectedSuggestions: string[] = Array.from({ length: 5 }, (_, i) => data[(randomIndex + i) % data.length].prompt);
 
+
+      setSuggestions(selectedSuggestions); 
+    } catch (error) {
+      console.error('Error fetching suggestions:', error);
+    }
+  };
   
   const handleSubmit = async () => {
+    setIsloading(true); // set loading state to true
     await getResponse(input); // await response from ai
     setIsloading(false); // set loading state to false
   };
   
+  const setAsPrompt = (selectedIndex: number) => {
+    const clickedSuggestion = suggestions.find((curSuggestion, index) => index === selectedIndex);
+    
+    setInput(clickedSuggestion); // set as input value
+    handleSubmit(); // call submit function
+    
+  }
+ 
   const handleClear = () => {
     history = []; // clear all past conversations 
   };
@@ -156,27 +190,17 @@ const Axionis = () => {
            ))
           ) : (
            <div className="default-screen">
-             <h2>
+             <h3>
                How can i help you today?
-            </h2>
+            </h3>
             
             <div className="prompt-wrapper">
              <div>
-              <div>
-                How do i create a resume 
-              </div>
-           
-              <div>
-                can you suggest a unique hobby to try?
-              </div>
-           
-              <div>
-                what's the best way to learn guitar 
-              </div>
-           
-              <div>
-                what's the best way to learn guitar 
-              </div>
+              {suggestions.map((suggestion, index) => (
+                <div key={index} onClick={() => setAsPrompt(index)}>
+                  {suggestion}
+                </div>
+               ))}
              </div>
             
             </div>
