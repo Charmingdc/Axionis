@@ -53,8 +53,13 @@ const useChat = () => {
       setHistory((prev) => [...prev, errorMessage]);
     }
   };
-
-  return { history, getResponse };
+  
+  const clearHistory = () => {
+    setHistory([]);
+  };
+  
+  
+  return { history, clearHistory, getResponse };
 };
 
 export default useChat;

@@ -19,7 +19,7 @@ const Axionis = () => {
   const [about, setAbout] = useState<boolean>(false);
   const [openModel, setOpenModel] = useState<boolean>(false);
   const [isLoading, setIsloading] = useState<boolean>(false);
-  let { history, getResponse } = useChat();
+  const { history, clearHistory, getResponse } = useChat();
   
   
  
@@ -69,7 +69,7 @@ const Axionis = () => {
   }, [isSuggestionClicked]);
  
   const handleClear = () => {
-    history = []; // clear all past conversations 
+    clearHistory(); // clear all past conversations 
   };
   
   
