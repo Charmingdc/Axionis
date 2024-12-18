@@ -27,13 +27,13 @@ const Axionis = () => {
   
   const getSuggestions = async (): Promise<void> => {
     try {
-      const response = await fetch('../assets/suggestions.json');
+      const response = await fetch('/suggestions.json');
       const data: Suggestion[] = await response.json();
       
       const randomIndex: number = Math.floor(Math.random() * data.length)
       const selectedSuggestions: string[] = Array.from({ length: 5 }, (_, i) => data[(randomIndex + i) % data.length].prompt);
       
-      alert(selectedSuggestions);
+    
       setSuggestions(selectedSuggestions); 
     } catch (error: any) {
       console.error('Error fetching suggestions:', error);
