@@ -27,3 +27,11 @@
     border-radius: 2px;
     padding: 3px 10px;
 }
+
+
+@media (prefers-color-scheme: dark) {
+ body {
+   color: rgb(240, 240, 240);
+   background-color: rgb(13, 13, 13);
+ }
+}
