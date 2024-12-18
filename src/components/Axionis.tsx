@@ -70,6 +70,7 @@ const Axionis = () => {
  
   const handleClear = () => {
     clearHistory(); // clear all past conversations 
+    getSuggestions(); // get fresh suggestions 
   };
   
   
