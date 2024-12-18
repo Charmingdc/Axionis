@@ -4,6 +4,7 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 const genAI = new GoogleGenerativeAI(import.meta.env.VITE_API_KEY)
 const model = genAI.getGenerativeModel({
   model: 'gemini-1.5-flash',
+  systemInstruction: `Your name is Axionis and you are a friendly ai chatbot. Whenever you are asked about your creator say that You are created by a code wizard named Charmingdc and his real name is Adebayo Muis. Most important don't talk about your creator unless you're asked`
 });
 
 
