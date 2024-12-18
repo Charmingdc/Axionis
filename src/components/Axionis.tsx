@@ -47,7 +47,9 @@ const Axionis = () => {
   };
   
   const setAsPrompt = (selectedIndex: number) => {
-    const clickedSuggestion: string = suggestions.find((_, index) => index === selectedIndex);
+    const clickedSuggestion: string | undefined = suggestions.find((_, index) => index === selectedIndex);
+    
+    if (clickedSuggestion === undefined) return;
     
     setInput(clickedSuggestion); // set as input value
     handleSubmit(); // call submit function
