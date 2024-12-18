@@ -45,7 +45,7 @@ const useChat = () => {
       // create a response message
       const errorMessage = {
         role: 'model', 
-        parts: [{text: `Sorry, something went wrong: ${err.message}`}],
+        parts: [{text: `Hmm..., something seems to have gone wrong.`}],
       }
       
       // update history with error message

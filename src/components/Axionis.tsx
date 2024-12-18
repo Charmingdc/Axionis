@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import useChat from '../hooks/useChat.tsx';
 
+import Markdown from 'react-markdown';
 import AxionisImg from '/public/axionis.jpg';
 import CharmingdcImg from '../assets/charmingdc.jpg';
 
@@ -195,7 +196,9 @@ const Axionis = () => {
                
                <div className="ai-message">
                 <div className="ai-response">
-                  {chat.parts[0].text}
+                  <Markdown>
+                    {chat.parts[0].text}
+                  </Markdown>
                 </div>
                </div>
               </div>
@@ -203,9 +206,9 @@ const Axionis = () => {
            ))
           ) : (
            <div className="default-screen">
-             <h3>
+             <h2>
                What can I help with?
-            </h3>
+            </h2>
             
             <div className="prompt-wrapper">
               {suggestions.map((suggestion, index) => (
