@@ -210,7 +210,7 @@ main {
 .ai-response ul,
 .ai-response ol {
   margin: 1rem 0;
-  padding-left: 2rem;
+  padding-left: 1rem;
   list-style-type: disc;
 }
 
