@@ -306,6 +306,7 @@ main {
 }
 
 .ai-response code {
+ font-family: 'Courier New', Courier, monospace;
  white-space: pre-wrap;
  word-break: break-word;
 }
