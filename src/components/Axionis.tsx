@@ -39,7 +39,6 @@ const Axionis = () => {
       setSuggestions(selectedSuggestions); 
     } catch (error: any) {
       console.error('Error fetching suggestions:', error);
-      alert(error.message)
     }
   };
   
@@ -53,6 +52,9 @@ const Axionis = () => {
   }
   
   const handleSubmit = async () => {
+    if (input.trim() == '') return;
+    
+    
     setIsloading(true); // set loading state to true
     await getResponse(input); // await response from ai
     setIsloading(false); // set loading state to false

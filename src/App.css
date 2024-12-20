@@ -259,12 +259,13 @@ main {
 }
 
 .ai-response blockquote {
-  margin: 1rem 0;
-  padding-left: 1rem;
-  border-left: 0.4rem solid var(--shade);
   font-style: italic;
-  background-color: var(--shade-two);
   line-height: 1.6;
+  padding-left: 1rem;
+  background-color: var(--shade-two);
+  border-radius: 0.6rem;
+  border-left: 0.4rem solid var(--shade);
+  margin: 1rem 0;
 }
 
 .ai-response table {
@@ -289,7 +290,7 @@ main {
 .ai-response img {
   max-width: 100%;
   height: auto;
-  border-radius: 0.5rem;
+  border-radius: 0.6rem;
   margin: 1rem 0;
 }
 
