@@ -202,11 +202,103 @@ main {
  white-space: normal;
 }
 
+.ai-response p {
+  margin: 1rem 0;
+  line-height: 1.6;
+}
+
+.ai-response ul {
+  margin: 1rem 0;
+  padding-left: 2rem;
+  list-style-type: disc;
+}
+
+.ai-response li {
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+
+.ai-response h1, 
+.ai-response h2, 
+.ai-response h3, 
+.ai-response h4, 
+.ai-response h5, 
+.ai-response h6 {
+  color: var(--shade-two);
+  font-weight: bold;
+  margin: 1rem 0 0.5rem;
+  line-height: 1.4;
+}
+
+.ai-response h1 {
+  font-size: 1.5rem;
+}
+
+.ai-response h2 {
+  font-size: 1.3rem;
+}
+
+.ai-response h3 {
+  font-size: 1.2rem;
+}
+
+.ai-response h4, 
+.ai-response h5, 
+.ai-response h6 {
+  font-size: 1rem;
+}
+
+.ai-response a {
+  color: var(--sclr);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.ai-response a:hover {
+  text-decoration: none;
+}
+
+.ai-response blockquote {
+  margin: 1rem 0;
+  padding-left: 1rem;
+  border-left: 0.4rem solid var(--shade);
+  font-style: italic;
+  background-color: var(--shade-two);
+  line-height: 1.6;
+}
+
+.ai-response table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+}
+
+.ai-response th, 
+.ai-response td {
+  border: 0.1rem solid var(--shade);
+  padding: 0.8rem;
+  text-align: left;
+}
+
+.ai-response th {
+  background-color: var(--shade-two);
+  font-weight: bold;
+}
+
+.ai-response img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+}
+
 .ai-response pre {
  white-space: pre-wrap;
  word-break: break-word;
  overflow-wrap: break-word;
  overflow-x: auto;
+ font-family: 'Courier New', Courier, monospace;
  background-color: var(--shade-two);
  padding: .8rem;
  border-radius: .8rem;
