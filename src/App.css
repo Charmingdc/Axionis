@@ -207,9 +207,10 @@ main {
  word-break: break-word;
  overflow-wrap: break-word;
  overflow-x: auto;
- background-color: var(--shade);
- padding: 8px;
- border-radius: 4px;
+ background-color: var(--shade-two);
+ padding: .8rem;
+ border-radius: .8rem;
+ margin: .4rem 0;
 }
 
 .ai-response code {
