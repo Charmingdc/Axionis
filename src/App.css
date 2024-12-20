@@ -207,7 +207,8 @@ main {
   line-height: 1.6;
 }
 
-.ai-response ul {
+.ai-response ul,
+.ai-response ol {
   margin: 1rem 0;
   padding-left: 2rem;
   list-style-type: disc;
